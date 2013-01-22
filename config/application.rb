@@ -1,4 +1,5 @@
 require File.expand_path('../boot', __FILE__)
+require File.expand_path('../lobsters', __FILE__)
 
 require 'rails/all'
 
@@ -64,6 +65,6 @@ silence_warnings do
   ActionDispatch::ParamsParser::DEFAULT_PARSERS = {}
 end
 
-Rails.application.routes.default_url_options[:host] = "lobste.rs"
+Rails.application.routes.default_url_options[:host] = Lobsters::HOSTNAME
 
 require "#{Rails.root}/lib/monkey"
